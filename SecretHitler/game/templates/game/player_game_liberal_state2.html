@@ -1,0 +1,9 @@
+{% extends "game/base_liberal.html" %}
+{% block content %}
+    <h1>{{ object.president }} has nominated {{ object.chancellor }}, vote to confirm the nominee</h1>
+    <form action="#" method="get">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" onClick="window.location.reload();" value='Ja!' name="ja">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" onClick="window.location.reload();" value="Nein!" name="nein">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" onClick="window.location.reload();" value="Abstain" name="abstain">
+    </form>
+{% endblock content %}

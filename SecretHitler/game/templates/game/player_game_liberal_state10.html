@@ -1,0 +1,11 @@
+{% extends "game/base_liberal.html" %}
+{% block content %}
+    {% if user.get_username == object.president %}
+    <h1>The next three cards are {{ object.hidden_info }}</h1>
+    <form action="#" method="get">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" onClick="window.location.reload();" value="Done" name="peeked">
+    </form>
+    {% else %}
+        <h1>Wait for {{ object.president }} to look at the next three cards</h1>
+    {% endif %}
+{% endblock content %}

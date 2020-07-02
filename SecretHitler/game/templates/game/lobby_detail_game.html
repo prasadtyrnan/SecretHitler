@@ -1,0 +1,27 @@
+{% extends "game/base.html" %}
+{% block content %}
+    <meta http-equiv="refresh" content="5">
+    <h1>Players: {{ object.get_players }}</h1>
+   <!-- <h2>Fascists: {{ object.get_fascists }}</h2>
+    <h2>Hitler: {{ object.hitler }}</h2> -->
+    <h2>President: {{ object.president }} </h2>
+    <h2>President Index: {{ object.president_index }}</h2>
+    <h2>Chancellor: {{ object.chancellor }}</h2>
+    <!--
+    <h2>Previous President: {{ object.previous_president }}</h2>
+    <h2>Previous Chancellor: {{ object.previous_chancellor }}</h2> -->
+    <h2>Fascist Policies Passed: {{ object.fascist_count }}</h2>
+    <h2>Liberal Policies Passed: {{ object.liberal_count }}</h2>
+    <!--<h2>Deck: {{object.deck }}</h2>
+    <h2>Held Cards: {{ object.held_cards }}</h2>
+    <h2>Discards: {{ object.discards }}</h2>
+    <h2>Ready Status: {{ object.ready }}</h2>
+    <h2>State: {{ object.state }}</h2>
+    <h2>Player Count: {{ object.num_players }}</h2> -->
+    <h2>Failed Government Tracker: {{ object.failed_governments }}</h2>
+    <!-- <h2>Veto Performed: {{ object.veto_done }}</h2> ->
+    <form action="#" method="get">
+        <input type="submit" class="btn btn-outline btn-lg btn-block" onClick="window.location.reload();" value="Unstart Game" name="gameunstart">
+    </form>
+    <a class = "btn btn-outline btn-lg btn-block" href="{% url 'lobby-delete' object.room_num %}">End Game</a>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "game/base_fascist.html" %}
+{% block content %}
+    {% if smallGame %}
+        <h1>You are Hitler</h1>
+        <h2>The other Fascist is {{object.get_fascists}}</h2>
+    {% endif %}
+    <h2>Sabotage the liberals and pass 6 Fascist Policies or become Chancellor after 3 Fascist Policies have been enacted</h2>
+    <form action="#" method="get">
+        <input type="submit" class="btn btn-outline-fascist btn-lg btn-block" onClick="window.location.reload();" value="Ready Up" name="ready">
+    </form>
+{% endblock content %}

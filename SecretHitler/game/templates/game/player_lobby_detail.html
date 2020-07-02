@@ -1,0 +1,9 @@
+{% extends "game/base.html" %}
+{% block content %}
+    <meta http-equiv="refresh" content="5">
+    <h1>You, {{user.username}}, have joined room: {{object.room_num}}</h1>
+    <h2>People in room: {{object.get_players}}</h2>
+    {% if player %}
+        <h2>You are a player</h2>
+    {% endif %}
+{% endblock content %}

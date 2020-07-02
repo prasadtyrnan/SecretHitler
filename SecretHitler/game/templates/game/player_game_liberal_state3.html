@@ -1,0 +1,13 @@
+{% extends "game/base_liberal.html" %}
+{% block content %}
+    {% if user.get_username == object.president %}
+    <h1>Choose a card to discard</h1>
+    <form action="#" method="get">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" value={{object.get_card1}} name="discard1">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" value={{object.get_card2}} name="discard2">
+        <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" value={{object.get_card3}} name="discard3">
+    </form>
+    {% else %}
+        <h1>Wait for {{ object.president }} to discard a policy</h1>
+    {% endif %}
+{% endblock content %}

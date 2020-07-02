@@ -1,0 +1,14 @@
+{% extends "game/base.html" %}
+
+{% block content %}
+    <div>
+        <meta http-equiv="refresh" content="5">
+        <h1>Game in room: {{object.room_num}}</h1>
+        <h2>People in room: {{object.get_players}}</h2>
+        <h2>Game started: {{object.game_started}} </h2>
+    </div>
+    <form action="#" method="get">
+        <input type="submit" class="btn btn-outline btn-lg btn-block" onClick="window.location.reload();" value="Start Game" name="gamestart">
+    </form>
+   <a class = "btn btn-outline btn-lg btn-block" href="{% url 'lobby-delete' object.room_num %}">End Game</a>
+{% endblock content %}

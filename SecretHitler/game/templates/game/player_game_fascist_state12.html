@@ -1,0 +1,12 @@
+{% extends "game/base_fascist.html" %}
+{% block content %}
+    {% if user.get_username == object.president %}
+        <h1>{{object.chancellor}} would like to veto</h1>
+        <form action="#" method="get">
+            <input type="submit" class="btn btn-outline-fascist btn-lg btn-block" onClick="window.location.reload();" value="Approve" name="approve_veto">
+            <input type="submit" class="btn btn-outline-fascist btn-lg btn-block" onClick="window.location.reload();" value="Reject" name="reject_veto">
+        </form>
+    {% else %}
+        <h1>Wait for {{ object.president }} to decide whether or not to veto</h1>
+    {% endif %}
+{% endblock content %}

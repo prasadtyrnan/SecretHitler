@@ -1,0 +1,13 @@
+{% extends "game/base_liberal.html" %}
+{% block content %}
+    {% if user.get_username == object.president %}
+        <h1>You are the president, nominate a chancellor</h1>
+        {% for player in object.valid_chancellors %}
+            <form action="#" method="get">
+                <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" onClick="window.location.reload();" value={{player}} name="nominate">
+            </form>
+        {% endfor %}
+    {% else %}
+        <h1>Wait for {{ object.president }} to nominate a chancellor</h1>
+    {% endif %}
+{% endblock content %}

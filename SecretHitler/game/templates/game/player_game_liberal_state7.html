@@ -1,0 +1,15 @@
+{% extends "game/base_liberal.html" %}
+{% block content %}
+    {% if user.get_username == object.president %}
+    <h1>Choose someone to shoot</h1>
+    <form action="#" method="get">
+        {% for player in object.get_players %}
+            {% if player != object.president %}
+                <input type="submit" class="btn btn-outline-liberal btn-lg btn-block" onClick="window.location.reload();" value={{player}} name="shoot">
+            {% endif %}
+        {% endfor %}
+    </form>
+    {% else %}
+        <h1>Wait for {{ object.president }} to shoot someone</h1>
+    {% endif %}
+{% endblock content %}

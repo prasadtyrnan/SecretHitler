@@ -1,0 +1,20 @@
+{% extends "game/base.html" %}
+
+{% block content %}
+    <form action="#" method="get">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <input id="room_num" type="text" name="room_num" class="form-control-file" placeholder="Enter Room Number Here">
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <input type="submit" class="btn btn-outline btn-block" value="Connect" name="connect" onClick="window.location.reload();">
+            </div>
+            <div class="col"></div>
+        </div>
+    </form>
+{% endblock content %}
